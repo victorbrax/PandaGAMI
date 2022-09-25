@@ -3,9 +3,6 @@ import os
 
 import pandas as pd
 
-# Esse terá interface
-print('Prepare-se')
-
 from utils.mailOutput.mailOut import shoot_mail
 from utils.manage.organizer import format_header, junk_drop, user_cross
 from utils.notification.nalerts import start_working, success_notification
@@ -15,6 +12,7 @@ SourceSheet = pd.ExcelFile(rf'sheetfiles\BU KPI.xlsb', engine='pyxlsb')
 SourceDF = pd.read_excel(SourceSheet, 'Latam KPI')
 EmailSheet = pd.read_excel(rf'sheetfiles\Libro.xlsx')
 
+print('testeaaa')
 # > Junk drop
 SourceDF = junk_drop(SourceDF)
 
