@@ -1,18 +1,14 @@
 #%% > Imports
 import os
-
 import pandas as pd
 
+from sheetfiles.sheetcontrol import SourceDF, EmailSheet
 from utils.mailOutput.mailOut import shoot_mail
 from utils.manage.organizer import format_header, junk_drop, user_cross
 from utils.notification.nalerts import start_working, success_notification
 
-# > Reads
-SourceSheet = pd.ExcelFile(rf'sheetfiles\BU KPI.xlsb', engine='pyxlsb')
-SourceDF = pd.read_excel(SourceSheet, 'Latam KPI')
-EmailSheet = pd.read_excel(rf'sheetfiles\Libro.xlsx')
 
-print('testeaaa')
+
 # > Junk drop
 SourceDF = junk_drop(SourceDF)
 
