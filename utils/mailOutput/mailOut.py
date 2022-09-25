@@ -2,6 +2,18 @@ import os
 import win32com.client as win32
 from time import sleep
 
+def attachment(user, individualfile, counter):
+    namefile = f'Items pendientes Markview -'+user[counter]+'.xlsx'
+    path = f'sheetoutput/{namefile}'
+    individualfile.to_excel(path, index=False)
+    return namefile, path
+
+def localize_recipient(orignssheet, users, counter):
+    recipient = orignssheet.loc[orignssheet['Full Name'] == users[counter]]
+    recipient = recipient[['Sencinet Email']]
+    recipient = recipient.to_string(index=False, header=False)
+    return recipient
+
 
 def shoot_mail(trigger: bool, nameuser: str, mailuser: str, namefile: str):
     

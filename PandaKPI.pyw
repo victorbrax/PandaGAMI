@@ -3,8 +3,7 @@ import os
 import pandas as pd
 
 from sheetfiles.sheetcontrol import KingDF, EmailSheet
-
-from utils.mailOutput.mailOut import shoot_mail #, localize_recipient
+from utils.mailOutput.mailOut import shoot_mail, localize_recipient, attachment
 from utils.manage.organizer import format_header, junk_drop, user_cross
 from utils.notification.nalerts import start_working, success_notification
 
@@ -28,20 +27,13 @@ for i in range(len(usernames)):
     IndividualAttachment = KingDF.loc[KingDF['MV Owner'] == usernames[i]]
 
     # > Recipient mail by name 
-    # localize_element(EmailSheet, usernames, i)
-    # # localize_recipient
-    recipient = EmailSheet.loc[EmailSheet['Full Name'] == usernames[i]]
-    recipient = recipient[['Sencinet Email']]
-    recipient = recipient.to_string(index=False, header=False)
+    recipient = localize_recipient(EmailSheet, usernames, i)
 
     # > Attachment username column drop
     IndividualAttachment = IndividualAttachment.drop(columns=['MV Owner'])
-    # - ↑ Para ratificar correspondência, comente ↑
 
     # > Sheet Attachment filename & path + save
-    namefile = f'Items pendientes Markview -'+usernames[i]+'.xlsx'
-    path = f'sheetoutput/{namefile}'
-    IndividualAttachment.to_excel(path, index=False)
+    namefile, path = attachment(usernames, IndividualAttachment, i)
 
     # > Header format:
     format_header(path)
@@ -51,11 +43,6 @@ for i in range(len(usernames)):
     
     # > Remove attachment file to avoid garbage
     os.remove(path)
-    # - ↑ Para ratificar correspondência, comente ↑
-
 
 qtusers = len(usernames)
 success_notification(qtusers)
-
-# * Generate .exe:
-# pyinstaller -F --onefile main.pyw
