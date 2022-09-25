@@ -35,10 +35,11 @@ def shoot_mail(trigger: bool, nameuser: str, mailuser: str, namefile: str):
     mailItem.Attachments.Add(os.path.join(os.getcwd(), fr'sheetoutput/{namefile}'))
 
     if trigger:
+        return mailItem.Send() 
+        sleep(0.3)
+    else:
         return mailItem.Display()
-        # return mailItem.Send()  
         
     #* Triggers
     # mailItem.Display()
     # mailItem.Save()
-    sleep(0.3)
