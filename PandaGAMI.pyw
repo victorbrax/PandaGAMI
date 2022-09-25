@@ -1,9 +1,9 @@
-#%% > Imports
+# > Imports
 import os
 import pandas as pd
 
-from sheetfiles.sheetcontrol import KingDF, EmailSheet
-from utils.mailOutput.mailOut import shoot_mail, localize_recipient, attachment
+from sheetfiles.sheetcontrol import EmailSheet, KingDF
+from utils.mailOutput.mailOut import attachment, localize_recipient, shoot_mail
 from utils.manage.organizer import format_header, junk_drop, user_cross
 from utils.notification.nalerts import start_working, success_notification
 
