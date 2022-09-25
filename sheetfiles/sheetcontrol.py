@@ -20,4 +20,3 @@ KingDF = KingDF[['MV Owner',
                  'PO Number',
                  'Description Field']]
 
-

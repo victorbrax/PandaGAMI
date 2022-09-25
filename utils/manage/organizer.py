@@ -22,11 +22,6 @@ def junk_drop(SourceDF):
         SourceDF = SourceDF.drop(trash[i].index)
     return SourceDF
 
-
-
-
-
-
 # > Username data crossover
 def user_cross(usernamesOnHold, usernamesSource):
     usernames = []
@@ -36,7 +31,6 @@ def user_cross(usernamesOnHold, usernamesSource):
     return usernames
 
 # > Header format:
-
 def format_header(path):
     wb = openpyxl.load_workbook(path)
     ws = wb['Sheet1']
@@ -49,7 +43,10 @@ def format_header(path):
         if new_column_length > 0:
             ws.column_dimensions[new_column_letter].width = new_column_length*1.23
 
-    cell = ['A1', 'B1', 'C1', 'D1', 'E1', 'F1', 'G1', 'H1', 'I1', 'J1', 'K1', 'L1']
+    # > Cells letter order
+    cell = []
+    for i in range(ord('A'), ord('L')+1):
+        cell.append((chr(i))+"1")
 
     for x in cell:
         ws[x].fill = fill_cell
