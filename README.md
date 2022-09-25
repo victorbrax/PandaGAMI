@@ -1,16 +1,18 @@
 # PandaGami
 
 # Dependences:
-altgraph                  0.17.2   
-auto-py-to-exe            2.23.1   
-bottle                    0.12.23  
-bottle-websocket          0.2.9    
-cffi                      1.15.1   
-Eel                       0.14.0   
-et-xmlfile                1.1.0    
-future                    0.18.2   
+Package                   Version
+------------------------- ---------
+altgraph                  0.17.2 
+auto-py-to-exe            2.23.1 
+bottle                    0.12.23
+bottle-websocket          0.2.9  
+cffi                      1.15.1 
+Eel                       0.14.0 
+et-xmlfile                1.1.0  
+future                    0.18.2 
 gevent                    21.12.0
-gevent-websocket          0.10.1
+gevent-websocket          0.10.1 
 greenlet                  1.1.3
 numpy                     1.23.3
 openpyxl                  3.0.10
@@ -26,6 +28,7 @@ python-dateutil           2.8.2
 pytz                      2022.2.1
 pywin32                   304
 pywin32-ctypes            0.2.0
+pyxlsb                    1.0.9
 setuptools                63.2.0
 six                       1.16.0
 whichcraft                0.6.1
