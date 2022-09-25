@@ -2,12 +2,12 @@
 __pycache__/
 *.py[cod]
 *$py.class
-pyvenv.cfg
 
 # C extensions
 *.so
 
 # Distribution / packaging
+.pyvenv.cfg
 .Python
 build/
 develop-eggs/
