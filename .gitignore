@@ -1,3 +1,11 @@
+# Manual
+Include/
+Lib/
+test.py
+PandaGAMI (nofunctional).exe
+Scripts
+pyvenv.cfg
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -14,8 +22,6 @@ dist/
 downloads/
 eggs/
 .eggs/
-include/
-lib/
 lib64/
 parts/
 sdist/
